@@ -10,7 +10,7 @@ namespace AppEstudiantes.Test.Controladores
         [Fact]
         public void ObtenerEstado_DeberiaRetornarAprobado_ConMock()
         {
-            var estudiante = new Estudiante { CI = 41924628, Nombre = "Maria", Nota = 90 };
+            var estudiante = new Estudiante { CI = 89126732, Nombre = "Maria", Nota = 90 };
 
             var servicioMock = new Mock<IServicioEstudiante>();
             servicioMock.Setup(s => s.EstaAprobado(estudiante.CI)).Returns(true);
@@ -18,8 +18,9 @@ namespace AppEstudiantes.Test.Controladores
             var controlador = new ControladorEstudiante(servicioMock.Object);
             var resultado = controlador.ObtenerEstado(estudiante.CI);
 
-            Assert.Equal(41924628, estudiante.CI);
+            Assert.Equal(89126732, estudiante.CI);
             Assert.Equal("Maria", estudiante.Nombre);
+            Assert.Equal(90, estudiante.Nota);
             Assert.Equal("Aprobado", resultado);
         }
 
@@ -36,6 +37,7 @@ namespace AppEstudiantes.Test.Controladores
 
             Assert.Equal(41928418, estudiante.CI);
             Assert.Equal("Pedro", estudiante.Nombre);
+            Assert.Equal(20, estudiante.Nota);
             Assert.Equal("Reprobado", resultado);
         }
     }
