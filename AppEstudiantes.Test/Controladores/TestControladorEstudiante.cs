@@ -18,6 +18,8 @@ namespace AppEstudiantes.Test.Controladores
             var controlador = new ControladorEstudiante(servicioMock.Object);
             var resultado = controlador.ObtenerEstado(estudiante.CI);
 
+            Assert.Equal(41924628, estudiante.CI);
+            Assert.Equal("Maria", estudiante.Nombre);
             Assert.Equal("Aprobado", resultado);
         }
 
@@ -32,6 +34,8 @@ namespace AppEstudiantes.Test.Controladores
             var controlador = new ControladorEstudiante(servicioMock.Object);
             var resultado = controlador.ObtenerEstado(estudiante.CI);
 
+            Assert.Equal(41928418, estudiante.CI);
+            Assert.Equal("Pedro", estudiante.Nombre);
             Assert.Equal("Reprobado", resultado);
         }
     }

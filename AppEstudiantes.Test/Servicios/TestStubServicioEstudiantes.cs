@@ -13,6 +13,7 @@ namespace AppEstudiantes.Test.Controladores
             var controlador = new ControladorEstudiante(servicioStub);
             var resultado = controlador.ObtenerEstado(59816946);
 
+            Assert.NotNull(servicioStub);
             Assert.Equal("Aprobado", resultado);
         }
 
@@ -24,6 +25,7 @@ namespace AppEstudiantes.Test.Controladores
             var controlador = new ControladorEstudiante(servicioStub);
             var resultado = controlador.ObtenerEstado(19261238);
 
+            Assert.NotNull(servicioStub);
             Assert.Equal("Reprobado", resultado);
         }
     }
